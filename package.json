@@ -4,6 +4,7 @@
   "description": "A POC that embeds files (like plain files or images) in a single server.js file.",
   "main": "serve.js",
   "scripts": {
+    "build-for-gcp": "rm -rf build && cd frontity && npx frontity build && cd .. && npx webpack && cp build/serverless.js build/index.js",
     "start": "rm -rf build && cd frontity && npx frontity build && cd .. && npx webpack && rm -rf frontity/build && node serve.js",
     "debug": "rm -rf build && cd frontity && npx frontity build && cd .. && npx webpack && rm -rf frontity/build && node --inspect serve.js"
   },
