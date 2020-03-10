@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         // Embed the js and txt files in a raw string.
-        test: /\/static\/.*\.(js|txt)$/i,
+        test: /\/static\/.*\.(js|txt|woff2)$/i,
         use: [
           {
             loader: "raw-loader"
