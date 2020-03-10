@@ -21,7 +21,7 @@ module.exports = {
     rules: [
       {
         // Embed the images in base64. No size limit.
-        test: /\/static\/.*\.png$/i,
+        test: /\/static\/.*\.(png)$/i,
         use: [
           {
             loader: "url-loader",
@@ -33,10 +33,19 @@ module.exports = {
       },
       {
         // Embed the js and txt files in a raw string.
-        test: /\/static\/.*\.(js|txt|woff2)$/i,
+        test: /\/static\/.*\.(js|txt)$/i,
         use: [
           {
             loader: "raw-loader"
+          }
+        ]
+      },
+      {
+        // Use the file loader
+        test: /\/static\/.*\.(woff2)$/i,
+        use: [
+          {
+            loader: "file-loader"
           }
         ]
       }
