@@ -21,7 +21,7 @@ module.exports = {
     rules: [
       {
         // Embed the images in base64. No size limit.
-        test: /\/static\/.*\.(png)$/i,
+        test: /\/static\/.*\.(png|woff2)$/i,
         use: [
           {
             loader: "url-loader",
@@ -39,16 +39,16 @@ module.exports = {
             loader: "raw-loader"
           }
         ]
-      },
-      {
-        // Use the file loader
-        test: /\/static\/.*\.(woff2)$/i,
-        use: [
-          {
-            loader: "file-loader"
-          }
-        ]
       }
+      // {
+      //   // Use the file loader
+      //   test: /\/static\/.*\.(woffzzz2)$/i,
+      //   use: [
+      //     {
+      //       loader: "file-loader"
+      //     }
+      //   ]
+      // }
     ]
   },
   plugins: [new webpack.IgnorePlugin(/^encoding$/)],
