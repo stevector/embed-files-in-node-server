@@ -4,7 +4,7 @@
   "description": "A POC that embeds files (like plain files or images) in a single server.js file.",
   "main": "serve.js",
   "scripts": {
-    "build-for-gcp": "rm -rf build && cd frontity && npx frontity build && cd .. && npx webpack && cp build/serverless.js build/index.js",
+    "build-for-gcp": "rm -rf build && cd frontity && npx frontity build && cd .. && npx webpack && cp serverless-index.js build/index.js",
     "start": "rm -rf build && cd frontity && npx frontity build && cd .. && npx webpack && rm -rf frontity/build && node serve.js",
     "debug": "rm -rf build && cd frontity && npx frontity build && cd .. && npx webpack && rm -rf frontity/build && node --inspect serve.js"
   },
@@ -12,6 +12,7 @@
   "author": "@luisherranz",
   "license": "MIT",
   "dependencies": {
+    "@google-cloud/functions-framework": "^1.5.0",
     "file-loader": "^5.1.0",
     "koa": "^2.11.0",
     "koa-route": "^3.2.0",
